@@ -12,13 +12,14 @@ router.post('/start-game', (req: Request, res: Response) => {
 router.post(
 	'/guess',
 	body('number').isFloat({ min: 1, max: 100 }),
-	(req: Request, res: Response) => {
+	async (req: Request, res: Response) => {
 		const errors = validationResult(req)
 
 		if (!errors.isEmpty()) {
 			return res.status(400).json({ errors: errors.array() })
 		}
-		const dto: { number: number } = req.body
+		const dto: { number: number } = await req.body
+
 		const { message } = gameService.guess(dto.number)
 
 		res.status(200).json({

@@ -7,9 +7,6 @@ export const useGame = () => {
 		const mutation = useMutation({
 			mutationKey: ['start-game'],
 			mutationFn: () => gameService.startGame(),
-			onSuccess: () => {
-				console.log('Game started')
-			},
 		})
 		return { mutation }
 	}
@@ -17,9 +14,6 @@ export const useGame = () => {
 		const mutation = useMutation({
 			mutationKey: ['guess'],
 			mutationFn: ({ number }: IGameDto) => gameService.guess({ number }),
-			onSuccess: ({ message }) => {
-				console.log(message)
-			},
 		})
 		return { mutation }
 	}

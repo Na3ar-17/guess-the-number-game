@@ -11,9 +11,9 @@ class GameService {
 		}
 	}
 
-	async guess({ number }: IGameDto): Promise<IGameResponse> {
+	async guess(dto: IGameDto): Promise<IGameResponse> {
 		try {
-			const { data } = await axios.post('/guess', number)
+			const { data } = await axios.post('/guess', dto)
 			return data
 		} catch (error) {
 			console.log(error)

@@ -1,7 +1,10 @@
 class GameService {
 	generatedNumber: number = 0
+
 	startGame(): number {
 		this.generatedNumber = Math.floor(Math.random() * 100)
+		console.log(this.generatedNumber)
+
 		return this.generatedNumber
 	}
 
