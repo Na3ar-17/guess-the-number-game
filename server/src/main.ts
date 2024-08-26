@@ -2,6 +2,7 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import * as dotenv from 'dotenv'
 import express, { Express, Request, Response } from 'express'
+import { gameRouter } from './game/game.controller'
 
 dotenv.config()
 
@@ -19,6 +20,8 @@ async function main() {
 	app.get('/', (req: Request, res: Response) => {
 		res.send('init')
 	})
+
+	app.use('/api', gameRouter)
 
 	app.all('*', (req: Request, res: Response) => {
 		res.status(404).json({ error: `Route ${req.originalUrl} not found` })
