@@ -26,11 +26,15 @@ const Main = () => {
 	const {
 		mutation: { mutate, data, isPending },
 	} = useGuess()
+	console.log(isPending)
 
 	const handleStart = () => {
 		startGameMutation()
 		setIsGameStarted(true)
 		setIsUserWon(false)
+		if (data?.message) {
+			data.message = ''
+		}
 	}
 
 	const onSubmit = (data: IGameDto) => {
@@ -41,6 +45,7 @@ const Main = () => {
 		if (data) {
 			reset()
 		}
+
 		if (data?.message === 'Число вгадано') {
 			setIsUserWon(true)
 		}

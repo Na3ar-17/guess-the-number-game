@@ -5,10 +5,9 @@ const router = Router()
 
 router.post('/start-game', (req: Request, res: Response) => {
 	const number = gameService.startGame()
-	res.status(200).json({
-		number,
-	})
+	res.status(200)
 })
+
 router.post(
 	'/guess',
 	body('number').isFloat({ min: 1, max: 100 }),

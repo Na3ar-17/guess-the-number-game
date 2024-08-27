@@ -12,7 +12,7 @@ const Input = forwardRef<HTMLInputElement, IProps>(
 			<label className='relative'>
 				<input
 					ref={ref}
-					className='bg-[#222] text-lg px-4 py-2 focus:outline-2 focus:outline-solid focus:outline-indigo-600 outline-none w-[200px] rounded-md transition-colors duration-300'
+					className='bg-[#222] disabled:cursor-not-allowed disabled:bg-opacity-85 text-lg px-4 py-2 focus:outline-2 focus:outline-solid focus:outline-indigo-600 outline-none w-[200px] rounded-md transition-colors duration-300'
 					{...rest}
 				/>
 				{errors.number && (

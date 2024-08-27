@@ -2,6 +2,7 @@ import { FieldErrors, UseFormRegister } from 'react-hook-form'
 import { IGameDto, IGameResponse } from '../../../types'
 import Button from '../../ui/button/Button'
 import Input from '../../ui/input/Input'
+import Loader from '../../ui/loader/Loader'
 
 interface IProps {
 	isUserWon: boolean
@@ -38,7 +39,8 @@ const GameScreen = ({
 								placeholder='Введіть число'
 								type='number'
 								max={100}
-								min={0}
+								min={1}
+								disabled={isButtonDisabled}
 								{...register('number', {
 									required: {
 										value: true,
@@ -54,12 +56,31 @@ const GameScreen = ({
 							/>
 						</form>
 					)}
-					{isUserWon && <Button text='Грати ще раз' onClick={handleStart} />}
+					{isUserWon && (
+						<Button
+							text='Грати ще раз'
+							onClick={() => {
+								handleStart()
+							}}
+						/>
+					)}
 				</div>
-				{data?.message !== 'Число вгадано' && (
-					<div className='text-center text-lg font-semibold mt-5 text-orange-400'>
-						{isPending ? 'Завантаження' : data?.message}
+				{isPending ? (
+					<div className='mt-5 flex justify-center items-center'>
+						<Loader />
 					</div>
+				) : (
+					data?.message && (
+						<div
+							className={`text-center text-lg font-semibold mt-5 ${
+								data.message === 'Число вгадано'
+									? 'text-green-500'
+									: 'text-orange-400'
+							} `}
+						>
+							{data.message}
+						</div>
+					)
 				)}
 			</div>
 		</div>

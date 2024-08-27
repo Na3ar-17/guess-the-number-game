@@ -9,7 +9,7 @@ const Button = forwardRef<HTMLButtonElement, IProps>(
 		return (
 			<button
 				ref={ref}
-				className='px-4 py-2 ml-2 bg-indigo-600 shadow-md rounded-md text-lg font-semibold transition-all  hover:bg-opacity-80 duration-300 active:bg-opacity-70'
+				className='px-4 disabled:bg-indigo-700 disabled:cursor-not-allowed py-2 ml-2 bg-indigo-600 shadow-md rounded-md text-lg font-semibold transition-all  hover:bg-opacity-80 duration-300 active:bg-opacity-70'
 				{...rest}
 			>
 				{text}
