@@ -56,24 +56,28 @@
 1. Запуск серверної частини:
 
    ```bash
+   cd ./server
    yarn dev
    ```
 
    або
 
    ```bash
+   cd ./server
    npm run dev
    ```
 
 2. Запуск клієнтської частини:
 
    ```bash
+   cd ./client
    yarn dev
    ```
 
    або
 
    ```bash
+   cd ./client
    npm run dev
    ```
 
