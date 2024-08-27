@@ -56,13 +56,25 @@
 1. Запуск серверної частини:
 
    ```bash
-   yarn dev / npm run dev
+   yarn dev
+   ```
+
+   або
+
+   ```bash
+   npm run dev
    ```
 
 2. Запуск клієнтської частини:
 
    ```bash
-   yarn dev / npm run dev
+   yarn dev
+   ```
+
+   або
+
+   ```bash
+   npm run dev
    ```
 
 ## Відслідковування загаданого числа
