@@ -25,7 +25,6 @@ const Main = () => {
 	const {
 		mutation: { mutate, data, isPending },
 	} = useGuess()
-	console.log(isPending)
 
 	const handleStart = () => {
 		startGameMutation()
