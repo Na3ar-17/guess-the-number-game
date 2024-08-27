@@ -38,13 +38,19 @@ const GameScreen = ({
 								errors={errors}
 								placeholder='Введіть число'
 								type='number'
-								max={100}
-								min={1}
 								disabled={isButtonDisabled}
 								{...register('number', {
 									required: {
 										value: true,
 										message: "Це поле є обов'язковим",
+									},
+									min: {
+										value: 1,
+										message: 'Мінімальне число 1',
+									},
+									max: {
+										value: 100,
+										message: 'Максимальне число 100',
 									},
 									valueAsNumber: true,
 								})}

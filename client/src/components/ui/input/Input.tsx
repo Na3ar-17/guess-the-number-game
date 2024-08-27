@@ -16,7 +16,7 @@ const Input = forwardRef<HTMLInputElement, IProps>(
 					{...rest}
 				/>
 				{errors.number && (
-					<p className='absolute text-sm text-red-400'>
+					<p className='absolute bottom-[-25px] text-[15px] font-semibold text-red-500'>
 						{errors.number.message}
 					</p>
 				)}
