@@ -5,7 +5,6 @@ import { IGameDto } from '../../../types'
 import GameScreen from './GameScreen'
 import './Main.css'
 import StartScreen from './StartScreen'
-
 const Main = () => {
 	const [isGameStarted, setIsGameStarted] = useState<boolean>(false)
 	const [isUserWon, setIsUserWon] = useState<boolean>(false)
