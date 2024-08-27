@@ -1,11 +1,13 @@
+import { LazyMotion, domAnimation } from 'framer-motion'
 import Main from './components/display/main/Main'
 import { Providers } from './components/display/Providers'
-
 function App() {
 	return (
 		<>
 			<Providers>
-				<Main />
+				<LazyMotion features={domAnimation}>
+					<Main />
+				</LazyMotion>
 			</Providers>
 		</>
 	)
